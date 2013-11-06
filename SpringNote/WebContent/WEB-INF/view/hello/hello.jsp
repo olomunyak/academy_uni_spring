@@ -13,27 +13,20 @@
 </script>
 </head>
 <body>
-${msg}
-<br/>
-${msg eq 'HelloWorld!!'}
-<br/>
-<c:forEach var="i" begin="1" end="10" step="1">
-${i}<br/>
-</c:forEach>
-<br/>
-<c:choose>
-	<c:when test="${msg eq 'Hello World!!'}">
-	it is same~~
-	</c:when>
-	<c:otherwise>
-	it is different
-	</c:otherwise>
-</c:choose>
-<br/>
-<c:forEach var="listItem" items="${list}">
-${listItem}<br/>
-</c:forEach>
-<br/>
-<input type="button" value="button" onclick="go()" />
+<table border="1">
+	<tr>
+		<th>번호</th>
+		<th>이름</th>
+		<th>휴대번호</th>
+	</tr>
+	<c:forEach var="listItem" items="${list}">
+		<tr>
+			<td>${listItem.num}</td>
+			<td>${listItem.name}</td>
+			<td>${listItem.phone}</td>
+		</tr>
+	</c:forEach>
+</table>
+
 </body>
 </html>
