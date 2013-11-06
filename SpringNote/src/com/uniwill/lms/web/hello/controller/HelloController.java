@@ -14,7 +14,18 @@ public class HelloController {
 	public ModelAndView hello(HttpServletRequest request,
 			                  HttpServletResponse response,
 			                  ModelAndView modelAndView) {
+		
 		modelAndView.setViewName("hello/hello");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/hello2")
+	public ModelAndView hello2(HttpServletRequest request,
+			                   HttpServletResponse response,
+			                   ModelAndView modelAndView) {
+		
+		modelAndView.setViewName("hello/hello2");
 		
 		return modelAndView;
 	}

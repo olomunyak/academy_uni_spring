@@ -5,15 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>hello</title>
-<script type="text/javascript">
-	function go() {
-		location.href = "hello2";
-	}
-</script>
+<title>hello2</title>
 </head>
 <body>
-this is hello test..
-<input type="button" value="button" onclick="go()" />
+hi~ helloworld2
 </body>
 </html>
