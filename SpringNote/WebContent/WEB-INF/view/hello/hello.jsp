@@ -8,14 +8,14 @@
 <title>hello</title>
 <script type="text/javascript">
 	function go() {
-		location.href = "hello2";
+		document.getElementById("goForm").submit();
 	}
 </script>
 </head>
 <body>
-<form action="hello2" id="goForm" method="get">
+<form action="hello2" id="goForm" method="post">
 	<input type="text" id="sendTxt" name="sendTxt"/>
-	<input type="button" value="move" onclick="this.form.submit();"/>
+	<input type="button" value="move" onclick="go();"/>
 </form>
 </body>
 </html>
