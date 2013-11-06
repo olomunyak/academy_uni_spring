@@ -13,20 +13,6 @@
 </script>
 </head>
 <body>
-<table border="1">
-	<tr>
-		<th>번호</th>
-		<th>이름</th>
-		<th>휴대번호</th>
-	</tr>
-	<c:forEach var="listItem" items="${list}">
-		<tr>
-			<td>${listItem.num}</td>
-			<td>${listItem.name}</td>
-			<td>${listItem.phone}</td>
-		</tr>
-	</c:forEach>
-</table>
-
+<input type="button" value="button" onclick="go();"/>
 </body>
 </html>
