@@ -1,5 +1,8 @@
 package com.uniwill.lms.web.hello.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,6 +17,15 @@ public class HelloController {
 	public ModelAndView hello(HttpServletRequest request,
 			                  HttpServletResponse response,
 			                  ModelAndView modelAndView) {
+		
+		List<Integer> list = new ArrayList<Integer>();
+		
+		for(int i = 0 ; i < 10 ; i++) {
+			list.add(i);
+		}
+		
+		modelAndView.addObject("msg", "HelloWorld!!");
+		modelAndView.addObject("list", list);
 		
 		modelAndView.setViewName("hello/hello");
 		
