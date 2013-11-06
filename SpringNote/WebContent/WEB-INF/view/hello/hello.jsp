@@ -10,8 +10,13 @@
 	function go() {
 		var txt = document.getElementById("sendTxt");
 		
-		if(txt.value != "") {			
-			document.getElementById("goForm").submit();			
+		if(txt.value != "") {
+			if(isNaN(txt.value)) {
+				alert("숫자좀 넣어라!");
+			} else {
+				document.getElementById("goForm").submit();
+			}
+			
 		} else {
 			alert("내용을 넣어라!");
 		}
