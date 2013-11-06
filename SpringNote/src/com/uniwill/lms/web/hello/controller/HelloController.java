@@ -25,6 +25,10 @@ public class HelloController {
 			                   HttpServletResponse response,
 			                   ModelAndView modelAndView) {
 		
+		String str = request.getParameter("sendTxt");
+		
+		modelAndView.addObject("sendTxt", str);
+		
 		modelAndView.setViewName("hello/hello2");
 		
 		return modelAndView;

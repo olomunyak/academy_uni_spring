@@ -8,6 +8,6 @@
 <title>hello2</title>
 </head>
 <body>
-test..
+${sendTxt}
 </body>
 </html>

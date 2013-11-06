@@ -13,6 +13,9 @@
 </script>
 </head>
 <body>
-<input type="button" value="button" onclick="go();"/>
+<form action="hello2" id="goForm" method="get">
+	<input type="text" id="sendTxt" name="sendTxt"/>
+	<input type="button" value="move" onclick="this.form.submit();"/>
+</form>
 </body>
 </html>
