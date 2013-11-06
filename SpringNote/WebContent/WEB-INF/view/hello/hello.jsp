@@ -8,7 +8,13 @@
 <title>hello</title>
 <script type="text/javascript">
 	function go() {
-		document.getElementById("goForm").submit();
+		var txt = document.getElementById("sendTxt");
+		
+		if(txt.value != "") {			
+			document.getElementById("goForm").submit();			
+		} else {
+			alert("내용을 넣어라!");
+		}
 	}
 </script>
 </head>
