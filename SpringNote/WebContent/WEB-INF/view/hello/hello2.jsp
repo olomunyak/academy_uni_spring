@@ -8,6 +8,7 @@
 <title>hello2</title>
 </head>
 <body>
-${sendTxt}
+${num}<br/>
+${str}
 </body>
 </html>
