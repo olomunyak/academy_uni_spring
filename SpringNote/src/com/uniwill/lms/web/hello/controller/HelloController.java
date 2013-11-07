@@ -31,10 +31,17 @@ public class HelloController {
 			                   HttpServletResponse response,
 			                   ModelAndView modelAndView) {
 		
-		int num = Integer.parseInt(request.getParameter("sendTxt"));
+		int num = 0;
+		String str = "";
 		
-		String str = iHelloService.getGugudan(num);
-		
+		try {
+			num = Integer.parseInt(request.getParameter("sendTxt"));
+			
+			str = iHelloService.getGugudan(num);			
+		} catch(Exception e) {
+			str = "잘못된 값 넣었음";
+		}
+				
 		modelAndView.addObject("num", num);
 		modelAndView.addObject("str", str);		
 		
