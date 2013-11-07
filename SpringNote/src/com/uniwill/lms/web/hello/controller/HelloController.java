@@ -37,16 +37,18 @@ public class HelloController {
 		try {
 			num = Integer.parseInt(request.getParameter("sendTxt"));
 			
-			str = iHelloService.getGugudan(num);			
+			str = iHelloService.getGugudan(num);		
+			
+			modelAndView.addObject("num", num);
+			modelAndView.addObject("str", str);
+			
+			modelAndView.setViewName("hello/hello2");
+			
+			return modelAndView;
 		} catch(Exception e) {
-			str = "잘못된 값 넣었음";
+			modelAndView.setViewName("redirect:hello");
+			
+			return modelAndView;
 		}
-				
-		modelAndView.addObject("num", num);
-		modelAndView.addObject("str", str);		
-		
-		modelAndView.setViewName("hello/hello2");
-		
-		return modelAndView;
 	}
 }
