@@ -10,8 +10,6 @@
 	<!-- 공통쿼리 -->
 	<sqlMap resource="/com/uniwill/lms/sqlMap/common/CommonSQL.xml" />
 	<!-- Login쿼리 -->
-	<!-- 
 	<sqlMap resource="/com/uniwill/lms/sqlMap/login/LoginSQL.xml" />
-	 -->
 </sqlMapConfig>
  
