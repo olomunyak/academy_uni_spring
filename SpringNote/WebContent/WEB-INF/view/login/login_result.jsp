@@ -6,17 +6,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
+<script type="text/javascript">
+	function logout() {
+		location.href = "logout";
+	}
+	function goMain() {
+		location.href = "main";
+	}
+</script>
 </head>
 <body>
-<c:choose>
-	<c:when test="${lb == null}">
-	 결과가 없습니다.
-	</c:when>
-	<c:otherwise>
-${lb.memNo}<br/>
-${lb.memNm}<br/>
-${lb.memId}<br/>
-    </c:otherwise>
-</c:choose>
+${sMemNo}<br/>
+${sMemNm}<br/>
+${sMemId}<br/>
+<input type="button" value="logout" onclick="logout();"/>
+<input type="button" value="main" onclick="goMain();"/>
 </body>
 </html>

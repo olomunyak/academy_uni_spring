@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,15 @@ public class LoginController {
 			                  HttpServletResponse response,
 			                  ModelAndView modelAndView) throws Throwable {
 		
-		modelAndView.setViewName("login/login");
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("sMemNo") != null) {
+			
+			modelAndView.setViewName("redirect:main");
+		} else {
+			
+			modelAndView.setViewName("login/login");
+		}
 		
 		return modelAndView;
 	}
@@ -42,8 +51,35 @@ public class LoginController {
 		
 		LoginBean lb = iLoginService.getMember(params);
 		
-		modelAndView.addObject("lb", lb);
-		modelAndView.setViewName("login/login_result");
+		if(lb != null) {
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("sMemNo", lb.getMemNo());
+			session.setAttribute("sMemId", lb.getMemId());
+			session.setAttribute("sMemNm", lb.getMemNm());
+			
+//			modelAndView.setViewName("login/login_result");
+			modelAndView.setViewName("redirect:main");
+			
+			return modelAndView;
+		} else {
+			
+			modelAndView.setViewName("redirect:login");
+			
+			return modelAndView;
+		}
+	}
+	
+	@RequestMapping(value="/logout")
+	public ModelAndView logout(HttpServletRequest request,
+			                   HttpServletResponse response,
+			                   ModelAndView modelAndView) throws Throwable {
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		modelAndView.setViewName("redirect:login");
 		
 		return modelAndView;
 	}

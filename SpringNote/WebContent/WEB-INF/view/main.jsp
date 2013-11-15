@@ -13,8 +13,8 @@
 </script>
 </head>
 <body>
-	Main임
-	<input type="button" value="로그아웃" onclick="logout();"/>
+	Main page..
+	<input type="button" value="logout" onclick="logout();"/>
 </body>
 </html>
 
